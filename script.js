@@ -309,6 +309,11 @@ function selectRoute(routeObj) {
   console.log("Selected route:", routeObj);
   selectedRoute = routeObj;
   
+  // Display route info in survey section
+  const routeInfo = document.getElementById('selectedRouteInfo');
+  const operator = routeObj.co === 'CTB' ? 'Citybus (CTB)' : (routeObj.co === 'KMB' ? 'KMB' : routeObj.co);
+  routeInfo.textContent = `Route: ${routeObj.route} | Operator: ${operator}`;
+  
   // Determine if it's KMB or Citybus based on the presence of service_type field
   if (routeObj.service_type !== undefined) {
     // KMB route
@@ -464,6 +469,14 @@ function exportCSV() {
   csv += `Date,${surveyDate}\n`;
   csv += `Day of Week,${dayOfWeek}\n`;
   csv += `Vehicle Number,${escapeCsvField(vehicleNumber)}\n`;
+  
+  // Add route and operator information
+  if (selectedRoute) {
+    const operator = selectedRoute.co === 'CTB' ? 'Citybus (CTB)' : (selectedRoute.co === 'KMB' ? 'KMB' : selectedRoute.co);
+    csv += `Route,${selectedRoute.route}\n`;
+    csv += `Operator,${operator}\n`;
+  }
+  
   csv += `Notes,${escapeCsvField(surveyNotes)}\n`;
   csv += "\n\nPASSENGER DATA\n";
   csv += "stop_tc,stop_en,time,boarding,alighting,onboard,cumulative_boarding,notes\n";

@@ -22,12 +22,30 @@
 
 <h3>Survey Information</h3>
 <div id="surveyInfo" style="background-color: #ecf0f1; padding: 15px; border-radius: 5px; margin-bottom: 20px;">
-  <input id="surveyerName" type="text" placeholder="Surveyor Name" style="width: 200px; margin-right: 10px;">
-  <input id="surveyDate" type="date" style="width: 150px; margin-right: 10px;">
-  <span id="dayOfWeek" style="margin-right: 10px;"></span>
-  <input id="vehicleNumber" type="text" placeholder="Vehicle Number" style="width: 150px; margin-right: 10px;">
-  <br><br>
-  <textarea id="surveyNotes" placeholder="General Notes" style="width: 100%; height: 60px; border: 1px solid #bdc3c7; border-radius: 4px; padding: 8px;"></textarea>
+  <div style="margin-bottom: 12px;">
+    <label style="display: block; font-weight: 600; margin-bottom: 5px;">Surveyor Name</label>
+    <input id="surveyerName" type="text" placeholder="Enter surveyor name" style="width: 100%; max-width: 400px; padding: 8px; border: 1px solid #bdc3c7; border-radius: 4px;">
+  </div>
+  
+  <div style="margin-bottom: 12px;">
+    <label style="display: block; font-weight: 600; margin-bottom: 5px;">Date</label>
+    <div style="display: flex; gap: 15px; align-items: center;">
+      <input id="surveyDate" type="date" style="padding: 8px; border: 1px solid #bdc3c7; border-radius: 4px;">
+      <span id="dayOfWeek" style="font-size: 1rem;"></span>
+    </div>
+  </div>
+  
+  <div style="margin-bottom: 12px;">
+    <label style="display: block; font-weight: 600; margin-bottom: 5px;">Vehicle Number</label>
+    <input id="vehicleNumber" type="text" placeholder="Enter vehicle number" style="width: 100%; max-width: 400px; padding: 8px; border: 1px solid #bdc3c7; border-radius: 4px;">
+  </div>
+  
+  <div style="margin-bottom: 12px;">
+    <label style="display: block; font-weight: 600; margin-bottom: 5px;">General Notes</label>
+    <textarea id="surveyNotes" placeholder="Enter any general notes about the survey" style="width: 100%; height: 70px; border: 1px solid #bdc3c7; border-radius: 4px; padding: 8px;"></textarea>
+  </div>
+  
+  <div id="selectedRouteInfo" style="padding-top: 10px; border-top: 1px solid #bdc3c7; margin-top: 10px; font-weight: 600; color: #2c3e50;"></div>
 </div>
 
 <h3>Select Route</h3>
